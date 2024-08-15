@@ -1,0 +1,56 @@
+<html>
+<head>
+<title>Palindrom Application</title>
+
+<style>
+*{
+font-size: 40px;
+}
+
+body{
+background: azure;
+}
+</style>
+</head>
+
+<body>
+<center>
+<h2>Palindrome Application</h2>
+<form onsubmit = "check()">
+<input type = "text" id = "str" placeholder = "Enter string"><br><br>
+<input type = "submit" value = "Check"/>
+</form>
+
+<h2 id = "msg"/>
+</center>
+</body>
+
+<script>
+
+function check(){
+event.preventDefault();
+let str = document.getElementById("str");
+let msg = document.getElementById("msg");
+
+if(str.value === ""){
+alert("Enter the string.");
+msg.innerHTML = "";
+str.focus();
+return;
+}
+
+let a = "";
+let s = str.value;
+
+let r = s.split("").reverse().join("");
+
+if(s === r){
+a = "Strings are palindrome."
+}else{
+a = "Strings are not palindrome."
+}
+msg.innerHTML = a;
+}
+
+</script>
+</html>
